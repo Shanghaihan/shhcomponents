@@ -1,0 +1,56 @@
+.notification{
+    max-width: 230px;
+    max-height: 200px;
+    overflow: hidden;
+    padding: 12px  48px 12px 12px;
+    z-index: 99;
+    font-weight: bold;
+    position: relative;
+    color: #fff;
+
+        .closeButton {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            height: 16px;
+            transform: translateY(-50%);
+            background: transparent;
+            padding: 0;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            outline: none;
+        }
+        &:not(:last-child) {
+            margin-bottom: 8px;
+          }
+        &.info {
+            background-color: #2196f3;
+        }
+        
+        &.success {
+            background-color: #4caf50;
+        }
+        
+        &.warning {
+            background-color: #ff9800;
+        }
+        
+        &.error {
+            background-color: #f44336;
+        }
+        &.slideIn{
+            animation-name: slideIn;
+            animation-duration: 0.3s;
+            animation-timing-function: ease-in-out;
+        }
+        
+}
+@keyframes slideIn{
+    from{
+        transform: translateX(400%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}

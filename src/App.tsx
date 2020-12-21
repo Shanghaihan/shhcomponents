@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { Notification, Color } from './component/Notification/Notification';
+interface NoteInterface {
+    id: number;
+    color?: Color;
+  }
+  
+  function App() {
+    const [notifications, setNotifications] = useState<NoteInterface[]>([]);
+    const createNotification = (color: Color) => {
+      setNotifications([
+        ...notifications,
+        {
+          color,
+          id: notifications.length,
+        },
+      ]);
+    };
+    
+  const deleteNotification = (id: number) =>{
+    setNotifications(notifications.filter(notification => notification.id !== id));
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    return (
+      <div className="App">
+        <h1>Notification Demo</h1>
+        <button onClick={() => createNotification(Color.info)}>Info</button>
+        <button onClick={() => createNotification(Color.success)}>Success</button>
+        <button onClick={() => createNotification(Color.warning)}>Warning</button>
+        <button onClick={() => createNotification(Color.error)}>Error</button>
+        {notifications.map(({ id, color }) => {
+            return<Notification key={id} color={color} onDelete={()=>deleteNotification(id)}>
+                This is Notification
+                </Notification>
+        })}
+      </div>
+    );
+  }
 
 export default App;
