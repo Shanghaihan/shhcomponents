@@ -1,15 +1,16 @@
 
 import './App.css';
-import sMessage, { Color,Notification } from './component/Notification/Notification';
-
+import sMessage from './component/Notification/Notification';
+import {SButton}  from './component/Button/sButton'
   function App() {
     return (
       <div className="App">
         <h1>Notification Demo</h1>
-        <button onClick={()=>sMessage.info("hahhahahaha")}>Info</button>
-        <button onClick={()=>sMessage.success("lallalal")}>Success</button>
-        <button onClick={()=>sMessage.warning("lallalal")}>Warning</button>
-        <button onClick={()=>sMessage.error("lallalal")}>Error</button>
+        <SButton type="default" size="middle" onClick={()=>sMessage.info("lallalal")} danger>Primary</SButton>
+        <SButton type='primary' size="middle" onClick={()=>sMessage.info("lallalal")} danger>Primary</SButton>
+        <SButton type="default" size="middle" onClick={()=>sMessage.info("lallalal")}>Primary</SButton>
+        <SButton type="primary" size="middle" onClick={()=>sMessage.info("lallalal")}>Primary</SButton>
+        <SButton type="default" size="middle" disabled>success</SButton>
       </div>
     );
   }

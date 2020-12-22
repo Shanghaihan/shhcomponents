@@ -29,7 +29,6 @@
         &.info {
             background-color: #2196f3;
         }
-        
         &.success {
             background-color: #4caf50;
         }
@@ -67,7 +66,7 @@
 }
 @keyframes slideIn{
     from{
-        transform: translateY(-100%);
+        transform: translateY(-200%);
     }
     to{
         transform: translateY(0);
