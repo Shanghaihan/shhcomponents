@@ -1,3 +1,4 @@
+
 .Modal{
     background-color: rgba(140, 140, 140,0.5);
     width: 100%;
@@ -9,7 +10,6 @@
         display: none;
     }
 }    
-
 .modalBox{
     z-index: 1000;
     min-width: 600px;
@@ -20,6 +20,8 @@
     flex-direction: column;
     align-self:center;
     margin:  0 auto;
+    transition: opacity 1s;
+    transform:translate(110%,30%) ;
     &.vislible{
         display: none;
     }
@@ -70,21 +72,19 @@
     0%{
         max-width: 0;
         max-height: 0;
-        transform:translate(0%,0%) ;
+        opacity: 0;
     }
     100%{
         min-width: 600px;
         min-height: 400px;
-        transform:translate(110%,30%) ;
+        opacity: 1;
     }
 }
 @keyframes slideOut{
     from{
-        transform:translate(0%,0%) ;
+        opacity: 1;
     }
     to{
-        width: 0;
-        height: 0;
-        transform: translate(-100%,-100%);
+        opacity: 0;
     }
 }
