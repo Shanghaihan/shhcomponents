@@ -2,8 +2,10 @@
 import './App.css';
 import sMessage from './component/Notification/Notification';
 import {SButton}  from './component/Button/sButton'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import SModal from './component/Modal/Modal';
+import SHover from './component/Horver-tips/SHover';
+import { SLoading, SSignal } from './component/Loading/Loading';
   function App() {
     const [modalvis,setModalVis] =useState(false);
     const changeModalVis = ()=>{
@@ -18,6 +20,9 @@ import SModal from './component/Modal/Modal';
         <SButton type="primary" size="middle" onClick={()=>sMessage.info("lallalal")}>Primary</SButton>
         <SButton type="default" size="middle" disabled>success</SButton>
         <SButton type="primary" size="middle" onClick={()=>changeModalVis()}>OpenModal</SButton>
+        <SHover></SHover>
+        <SLoading/>
+        <SSignal/>
         <SModal visible={modalvis}
             title="modalex"
             footer={
@@ -28,10 +33,6 @@ import SModal from './component/Modal/Modal';
             <p>Some contents...</p>
             <p>Some contents...</p>
             <p>Some contents...</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p> 
             <p>Some contents...</p>
             <p>Some contents...</p>
         </SModal>
