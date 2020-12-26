@@ -1,0 +1,50 @@
+.Streamer{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: greenyellow;
+
+    &::before{
+        position: absolute;
+        left:-5px;
+        top:-5px;
+        bottom: -5px;
+        right: -5px;
+        z-index: 99;
+        width: 160px;
+        height: 160px;
+        z-index: -99;
+        background-color: hotpink;
+        content: "";
+        animation: move 4s linear infinite;
+    }
+    &::after{
+        position: absolute;
+        left:-5px;
+        top:-5px;
+        bottom: -5px;
+        right: -5px;
+        width: 160px;
+        height: 160px;
+        z-index: -99;
+        background-color: rgb(122, 100, 207);
+        content: "";
+        animation: move 4s linear infinite;
+        animation-delay: 2s;
+    }
+}
+
+@keyframes move{
+    0%,100%{
+        clip-path: inset(0 0 calc(100% - 5px) 0);
+    }
+    25%{
+        clip-path: inset(0 0 0 calc(100% - 5px));
+    }
+    50%{
+        clip-path: inset(calc(100% - 5px) 0 0 0);
+    }
+    75%{
+        clip-path: inset(0 calc(100% - 5px) 0 0);
+    }
+}

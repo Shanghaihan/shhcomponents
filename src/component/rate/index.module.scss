@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     unicode-bidi: bidi-override;
-    direction: rtl;
+    flex-direction: row-reverse;
     input{
         width: 30px;
         height: 30px;
@@ -17,18 +17,37 @@
         text-align: center;
         font-size: 30px;
         transition: all .3s;
+        box-sizing: border-box;
+       
     }
     input::after{
         content: '★';
         color:grey;
     }
-    input:hover~input::after{
+    input:hover::after{
         content: '★';
         color: gold;
+        transition: all 0.3s ease 0s; 
+    }
+    input:hover~input::after{ 
+        content: '★';
+        color: gold; 
+        transition: all 0.3s ease 0s;
+    }
+    input:checked::after{
+        content: '★';
+        color: gold; 
+        transition: all 0.3s ease 0s;
     }
     input:checked~input::after{
         content: '★';
         color: gold;
+        transition: all 0.3s ease 0s;
+    } 
+
+
+    input:hover{
+            transform: scale(1.2);
     }
 
 

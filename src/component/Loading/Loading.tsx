@@ -22,24 +22,35 @@ export const SLoading:React.FC = ()=>{
 export const SSignal:React.FC = ()=>{
    return(
        <ul className={styles.SSignal}>
-           <li>
-               <div></div>
-           </li>
-           <li>
-                <em></em>
-           </li>
-           <li>
-                <em></em>
-           </li>
-           <li>
-                <em></em>
-           </li>
-           <li>
-                <em></em>
-           </li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
        </ul>
    )
 }
+
+                                       
+export const Shadow:React.FC = ()=>{
+
+   return(
+    <ul className={styles.Shadow}>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+   )
+}
+
+
+
+
 
                     
 
