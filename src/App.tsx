@@ -10,7 +10,7 @@ import { Backgound } from './component/Backgound/Background';
 import { Cube } from './component/Cube/Cube';
 import { SRate } from './component/rate/Rate';
 import { ProgressBall } from './component/ProgressBall/ProgressBall';
-import { Streamer } from './component/Streamer/Streamer';
+import { Streamer, StreamerButton } from './component/Streamer/Streamer';
   function App() {
     const [modalvis,setModalVis] =useState(false);
     const changeModalVis = ()=>{
@@ -41,6 +41,9 @@ import { Streamer } from './component/Streamer/Streamer';
             </div> 
             <div style={{display:'flex',height:'100%',flexDirection:'column',margin:'50px'}}>
                 <Streamer/>
+            </div> 
+            <div style={{display:'flex',height:'100%',flexDirection:'column',margin:'50px'}}>
+                <StreamerButton/>
             </div> 
             <Cube/>
         </div>
