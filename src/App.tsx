@@ -11,6 +11,8 @@ import { Cube } from './component/Cube/Cube';
 import { SRate } from './component/rate/Rate';
 import { ProgressBall } from './component/ProgressBall/ProgressBall';
 import { Streamer, StreamerButton } from './component/Streamer/Streamer';
+import { SmallTips } from './component/SmallTips/SmallTips';
+import { MoveTips } from './component/MoveTips/MoveTips';
   function App() {
     const [modalvis,setModalVis] =useState(false);
     const changeModalVis = ()=>{
@@ -47,8 +49,11 @@ import { Streamer, StreamerButton } from './component/Streamer/Streamer';
             </div> 
             <Cube/>
         </div>
-            
         <Backgound/>
+        <div style={{display:'flex',height:'200px',width:'100%',alignItems:'center',flexDirection:'row'}}>
+            <SmallTips style={{marginLeft:'75%',marginBottom:'15%'}}/>
+        </div>
+
         <SModal visible={modalvis}
             title="modalex"
             footer={
@@ -62,6 +67,7 @@ import { Streamer, StreamerButton } from './component/Streamer/Streamer';
             <p>Some contents...</p>
             <p>Some contents...</p>
         </SModal>
+        <MoveTips/>
       </div>
     );
   }
